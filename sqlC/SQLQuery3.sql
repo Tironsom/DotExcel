@@ -1,0 +1,12 @@
+USE criarBd;
+
+
+
+CREATE PROCEDURE `MostrarCargoMembro`(IN ra INT)
+BEGIN
+    SELECT CARGO.*, MEMBRO.*
+    FROM CARGO
+    INNER JOIN MEMBRO ON CARGO.IDCargo = MEMBRO.IDCargo
+    WHERE MEMBRO.RA = ra;
+END 
+
